@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<style>
+.button {
+  border-radius: 2px;
+  background-color: #008CBA;
+  border-radius: 8px;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  padding: 10px;
+  width: 220px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+
+
+</head>
+<body>
+	<br>
+	<label for="Enter Some ID" align="center"> RegisterID: </label> 
+	<input type="text" id="registerID" text="RegisterID" value="1234"/> 
+
+	<br><br>
+	<button id="putCommButton" class="button" ><span>PutCommitmentOnBC </span></button>
+	<script type="text/javascript">
+	
+   		document.getElementById("putCommButton").onclick = function () {
+
+			var idText= document.getElementById("registerID").value
+			putCommitmentOnBC(idText)
+			putZKFParamtersOnBC()
+    	};
+	</script> 
+
+	<button id="checkCommButton" class="button" ><span>CheckCommitmentOnBC </span></button>
+	<script type="text/javascript">
+	
+    	document.getElementById("checkCommButton").onclick = function () {
+
+			//var tmp= document.getElementById("userText").value
+			var test= checkToValidateCommitmentOnBC()
+			if(test == 1){
+				alert("Proof Validation Correct")
+			 	//location.href = "/home/digen/Desktop/PollingTmp/VotingBallotPage.html";
+			}
+    	};
+	</script> 
+
+</body>
+<!--<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+
+<script src="/home/digen/Desktop/PollingTmp/web3.js-develop/dist/web3.js"></script>
+<script src="/home/digen/Desktop/PollingTmp/SamplePollTest.js"></script>
+<script src="/home/digen/Desktop/PollingTmp/chancejs-master/chance.js"></script>
+<script src="/home/digen/Desktop/PollingTmp/jshashes-master/hashes.js"></script>
+<script src="/home/digen/Desktop/PollingTmp/BigInteger.js-master/BigInteger.js"></script>
+<script src="/home/digen/Desktop/PollingTmp/ZKF.js"></script>
+<script src="~/Desktop/PollingTmp/checkZKF.js"></script>
+
+<script src="/home/digen/Desktop/PollingTmp/web3.js-develop/dist/web3-light.js"></script>
+<script src="/home/digen/Desktop/PollingTmp/web3.js-develop/dist/web3.min.js"></script>
+<script src="/home/digen/Desktop/PollingTmp/web3.js-develop/dist/web3-light.min.js"></script>
+
+</html>

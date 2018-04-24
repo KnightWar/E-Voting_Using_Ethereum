@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello World</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+
+</head>
+<body class="container">
+  <h1>A Simple Voting Application</h1>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Candidate</th>
+          <th>Votes</th> 
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rama</td>
+          <td id="candidate-1"></td>  
+        </tr>
+        <tr>
+          <td>Nick</td>
+          <td id="candidate-2"></td>  
+        </tr>
+        <tr>
+          <td>Jose</td>
+          <td id="candidate-3"></td>  
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+	<label for="Candidate Name"> Candidate Name (case sensitive) </label> <br>
+  	<input type="text" id="candidate" text="Candidate Name" /> 
+
+	<form action="/home/digen/Desktop/PollingTmp/polling.js" >
+
+		<br>
+		<label for="ChooseVote"> ChooseVotes </label> <br>
+  		<input type="radio" name="Vote" value="zero" id="zeroVote" > NoVote<br>
+  		<input type="radio" name="Vote" value="one" id="oneVote"> YesVote<br>
+	<br>
+	</form>
+	<a href="#" onclick="voteForCandidate()" class="btn btn-primary">Vote</a>
+
+	<br><br>
+	<p><font face = "Times New Roman" size = "5" color="green" id="timerForVotesSummary">Check Votes Summary in: </font></p>
+
+	<p><font face = "Times New Roman" size = "5" color="blue" id="secretKey">SecretKey: </font></p> <br>
+
+	<input type="button" value="Send Secret Key To Decrypt Votes" id="keyToCountVotes" onClick= "showToButtonForVotesSummary()" disabled/>
+	<br>
+	<br>
+  	
+	<input type="button" onclick="totalVotesFor()" value="VotesSummary" id="votesSumm" disabled>  
+
+  	<button onclick="CheckIfVoteCasted()">CheckIfVoteCasted</button>
+	
+	<br><br>
+	
+</body>
+<!-- <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script> 
+
+<script src="/home/digen/Desktop/PollingTmp/web3.js-develop/dist/web3.js"></script>
+<script src="/home/digen/Desktop/PollingTmp/chancejs-master/chance.js"></script>
+<script src="/home/digen/Desktop/PollingTmp/aes-js-master/index.js"></script>
+<script src="/home/digen/Desktop/PollingTmp/randomstring-master/index.js"></script>
+
+<script src="/home/digen/Desktop/PollingTmp/polling.js"></script>
+
+
+</html>
